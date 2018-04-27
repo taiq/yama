@@ -1,0 +1,378 @@
+@charset "utf-8";
+/*
+Theme Name:	山澤工房
+Theme URI:http://yamazawa-kobo.com/
+Description:こちらの子テーマに追加編集してください
+Author:yamazawakoubou
+Template:alchem
+
+*/
+
+//変数定義
+$maincolor:#363581;
+%bg-maincolor{
+  background-color: $maincolor;
+}
+@mixin bg-maincolor {
+  background-color: $maincolor;
+}
+
+@mixin transition($time:1S){
+    transition: all 1S ease-out;
+}
+
+//上書き部分
+::selection,body ::selection,::-moz-selection,body ::-moz-selection,*::selection,*::-moz-selection,span::selection,span::-moz-selection,a::selection,a::-moz-selection,p::selection,p::-moz-selection,h1::selection,h1::-moz-selection,h2::selection,h2::-moz-selection{
+background-color: $maincolor !important;
+}
+.btn-normal, a.btn-normal, .magee-btn-normal, a.magee-btn-normal, .comment-reply-link, .form-submit .submit{
+  background-color: $maincolor;
+}
+a:active,a:hover{
+  color: $maincolor;
+}
+// #alchem-home-sections .alchem-home-style-0.alchem-home-section-0 .magee-heading{
+//   color:$maincolor;
+// }
+// #alchem-home-sections .alchem-home-section-0,.alchem-home-section-0 p,.alchem-home-section-0 span,.alchem-home-section-0 h1,.alchem-home-section-0 h2,.alchem-home-section-0 div,.alchem-home-section-0 li,.alchem-home-section-0 i{
+// 	color:$maincolor;
+// }
+// #alchem-home-sections .alchem-home-section-0 a.magee-btn-normal{
+//   color:$maincolor;
+// }
+.entry-footer{
+  a.btn-normal{
+    color: $maincolor;
+    border: 2px solid $maincolor;
+    background: transparent;
+    &:hover{
+      background: $maincolor;
+      color: #fff;
+    }
+  }
+}
+.site-nav{
+  >ul{
+    >li.menu-item-has-children {
+      i{
+        +a{
+          pointer-events: none;
+          color: #333;
+          &:hover{
+        background:none;
+          }
+          }
+        }
+      >li.current >a{
+        color: $maincolor;
+      }
+    }
+    }
+  }
+
+  .divider-border {
+    .divider-inner.primary{
+    border-color: $maincolor;
+    }
+  }
+
+  .person-vcard{
+    .person-title{
+      &:after{
+      @extend %bg-maincolor;
+      }
+    }
+  }
+
+  .btn-normal{
+    @extend %bg-maincolor;
+    color: #fff;
+  }
+  a.btn-normal .magee-btn-normal{
+    @extend .btn-normal;
+  }
+  a.magee-btn-normal{
+      @extend .btn-normal;
+  }
+  .comment-reply-link{
+      @extend .btn-normal;
+  }
+  .form-submit .submit{
+      @extend .btn-normal;
+}
+  .widget-title{
+    &:after{
+      background-color: #fff;
+    }
+  }
+#alchem-home-sections .alchem-home-section-10, .alchem-home-section-10 p, .alchem-home-section-10 span, .alchem-home-section-10 h1, .alchem-home-section-10 h2, .alchem-home-section-10 div, .alchem-home-section-10 li, .alchem-home-section-10 i{
+    color: $maincolor;
+}
+    
+p,div{
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.widget_custom_html{
+  img{
+    background: #fff;
+}
+    a+img{
+        margin: 0 10px;
+    }
+}
+table{
+    td,th{
+        vertical-align: middle;
+        padding: 1em;
+    }
+}
+
+
+a.button {
+    border: 2px solid #363581;
+    padding: 1em;
+    margin: 1em 0;
+    display: inline-block;
+    clear: both;
+    color: $maincolor;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-kerning: 1px;
+    letter-spacing: .2em;
+    @include transition;
+    &:hover{
+        color: #fff;
+        background-color: $maincolor;
+    }
+    span{
+            
+    font-size: .8em;
+    line-height: 1em;
+    }
+}
+
+
+//トップページ
+
+  section .section{
+z-index: 0;
+    // background-position:center center;
+    // animation-name: bgzume;
+    // animation-duration: 4s;
+    // animation-timing-function: ease-in-out;
+    // animation-fill-mode: forwards;
+
+  }
+  section .section:before{
+    content: "";
+    background: inherit;
+    filter:contrast(70%);
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-position:center center;
+    animation-name: bgzume;
+    animation-duration: 16s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+
+  }
+
+  @keyframes bgzume {
+    0%{
+      background-size: 120%;
+    }
+    50%{
+        background-size: 100%;  
+      }
+    100%{
+      background-size: 100%;
+    }
+  }
+
+alchem-home-sections .section-content{
+  h1,p,a{
+    text-shadow: 1px 1px 3px rgba(0,0,0,.5);
+  }
+}
+
+
+
+//カテゴリページ
+section.page-title-bar{
+  background-attachment: fixed;
+  background-size: cover;
+    position: relative;
+    z-index: -1;
+    .alchem_enable_page_title_bar{
+        position: relative;
+        z-index: 2;
+    }
+
+}
+
+section.page-title-bar:before{
+  content: "";
+    background:inherit;
+    filter:brightness(.5);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position:center center;
+}
+
+.post-wrap {
+    h2{
+    font-family: serif;
+}
+
+    h3{
+    font-size: 18px;
+    font-weight: bold;
+    display: inherit;
+    color: #363581;
+    border-bottom: 3px solid #363581;
+    padding: 0.5em 0;
+}
+  strong{
+    background-color: #363581;
+    color: #fff;
+    padding: .2em .2em;
+}  
+    dl{
+        margin-top: 20px;
+    margin-bottom: 20px;
+    background: #e5e5e5;
+    overflow: hidden;
+    box-sizing: border-box;  
+    }
+    dd,dt{
+    float: left;
+    padding: 1em;
+    font-size: 16px;
+    border-bottom: 1px solid #fff;
+        margin: 0;
+    }
+    dt{
+    font-weight: bold;
+    width: 20%;
+    clear: left;
+    border-right: 1px solid #fff;        
+    }
+    dd{
+        width: 80%;
+        margin-bottom: 0;
+    }
+    h4{
+        font-weight: bold;
+        font-size: 18px;
+    }
+}
+
+
+
+
+//投稿ページ
+.page-title h1,.breadcrumb-nav a{
+  text-shadow: 1px 1px 3px rgba(0,0,0,.5);  
+}
+.blog-list-wrap{
+  .entry-header{
+    &:after{
+      background-color: $maincolor;
+    }
+  }
+}
+
+.entry-footer{
+  @at-root .entry-tags{
+    padding: .2em .5em;
+    border: 1px solid #ccc;
+    color: #bbb;
+    border-radius: .5em;
+    text-decoration: none;
+    &:hover{
+      background-color: #ccc;
+      color: #999;
+    }
+  }
+}
+
+//修理の問い合わせ
+
+.application-panel img{
+    width: 45%;
+    margin: 0;
+}
+
+//スペアキー
+.key_captionarea{
+    margin: 20px 0 40px;
+    background: #e5e5e5;
+    padding: 2em;
+    color: #666;
+}
+
+.maker_list{
+    background-color: transparent !important;
+
+    dt,dd{
+        float: left;
+        box-sizing: border-box;
+        background-color: #e5e5e5;
+        border: none;
+        margin-bottom: 15px;
+        width: auto;
+        clear: none;
+    }
+    dt{
+        text-align: right;
+        padding-right: 0;
+    }
+    dd{
+        text-align: left;
+        padding-left: .5em;
+    }
+    dt+dd{
+        margin-right: 10px;
+    }
+}
+
+//問い合わせページ
+@import "form";
+
+//フッター
+
+footer {
+  a:hover{
+    color: #eee;
+  }
+}
+
+footer .footer-info-area{
+  background-color: #252525;
+}
+
+.img-box .img-overlay.primary{
+  background-color: rgba(0,0,0,.35);
+}
+
+
+
+
+@media screen and (max-width:919px){
+  //スマフォ用
+  @import "max-919";
+}
+
+@media screen and (min-width:920px){
+  //PC用
+  @import "min-920";
+}

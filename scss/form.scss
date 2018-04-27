@@ -1,0 +1,244 @@
+input#form_checkbox1,input#form_checkbox2,input#form_checkbox3,input#form_checkbox1_child_off,input#form_checkbox1_child_on,{
+  display: none;
+}
+
+.form_select_check{
+
+  box-sizing: border-box;
+  transition: all .2s linear;
+  position: relative;
+  display: inline-block;
+  margin: 0 20px 8px 0;
+  padding: 12px 12px 12px 42px;
+  border-bottom: 2px solid #eee;
+  width: 100%;
+  vertical-align: middle;
+  cursor: pointer;
+  &:after{
+    transition: all .2s linear;
+    position: absolute;
+    top:50%;
+    left:15px;
+    display: block;
+    margin-top: -8px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #aaa;
+    border-radius: 6px;
+    content: '';
+  }
+  &:before{
+    transition: all .2s linear;
+    position: absolute;
+    top:50%;
+    left:21px;
+    display: block;
+    margin-top: -7px;
+    width:5px;
+    height: 9px;
+    border-right: 3px solid $maincolor;
+    border-bottom: 3px solid $maincolor;
+    content: '';
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+  &:hover{
+    border-bottom-color: lighten($maincolor, 50%);
+    &:after{
+      border-color: lighten($maincolor, 50%);
+    }
+  }
+}//.form_select_check
+
+input[type="checkbox"]:checked+.form_select_check{
+  border-color: #aaa;
+  &:before{
+      opacity: 1;
+  }
+}//input[type="checkbox"]:checked
+@mixin form_styles_border($size:2px,$type:solid,$color:#aaa) {
+  border-bottom: $size $type $color;
+  border-left: $size $type $color;
+  border-right: $size $type $color;
+}
+.form_styles{
+  box-sizing: border-box;
+  @include form_styles_border;
+  margin-bottom: 18px;
+  padding-left: 7px;
+  padding-right: 7px;
+label{
+  color: #ccc;
+  padding-left: 0.5em;
+  margin-bottom: 1em;
+  font-weight: normal;
+  &+input{
+    padding-bottom: 7px;
+  }
+  &+select{
+    padding-bottom: 7px;
+  }
+}
+
+span+br,label+br{
+  display: none;
+}
+small{
+  padding-left: 7px;
+  margin-bottom: 48px;
+  display: block;
+}
+input,select,textarea,.form-label,.uploder_wrap>p{
+  &:placeholder-shown{
+    color: #aaa;
+  }
+  &::-webkit-input-placeholder{
+    color: #aaa;
+  }
+  &::-moz-placeholder{
+    color: #aaa;
+  }
+  color: #666;
+}
+
+.uploder_wrap{
+  margin-bottom: 48px;
+  &:after{
+  content: "";
+  display: table;
+  clear: both;
+  }
+  &:before{
+  content: "";
+  display: table;
+  }
+  input[type="file"]{
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    font-size: 0.8em;
+    vertical-align: bottom;
+    line-height: 42px;
+    padding: 0 20px;
+    background-color: transparent;
+  }
+  label{
+    display: inline-block;
+    float: left;
+    margin-right: 18px;
+  }
+
+}//.uploder_wrap
+
+
+
+select{
+  border: 2px solid #ccc;
+  background-color: transparent;
+  height: 3em;
+}
+
+@mixin form_text_design($color:#ccc) {
+  @content;
+  border-radius: 5px;
+  border: 2px solid $color;
+  background-color: transparent;
+  display: block;
+  height: 42px;
+  padding: 0 20px;
+  font-size: 14px;
+  width: 100%;
+}
+@mixin text_selection {
+  border-color: currentColor;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+}
+input.text{
+  @include form_text_design{
+    line-height: 1.42857143;
+    position: relative;
+    &:focus{
+      @include text_selection;
+    }
+    &:active{
+      @include text_selection;
+    }
+  }
+}
+
+textarea{
+  min-height: 8em;
+  @include form_text_design;
+  &:focus{
+    @include text_selection;
+  }
+  &:active{
+    @include text_selection;
+  }
+}
+
+  input.required:after {
+    content: '*';
+    color: #fa9;
+    position: absolute;
+    display: inline-block;
+  }
+@mixin hover_submit {
+    border-color: darken($maincolor,50%);
+    background-color: darken($maincolor,25%);
+}
+  input[type="submit"]{
+    margin: 48px auto 0;
+    display: block;
+    font-size: 1.6em;
+    line-height: 2em;
+    padding: 4px 16px;
+    letter-spacing: .1em;
+    border: 1px solid darken($maincolor, 30%);
+    background-color: $maincolor;
+    color: #eee;
+    &:hover{
+      @include hover_submit ;
+    }
+    &:active{
+      @include hover_submit ;
+    }
+    &:focus{
+      @include hover_submit ;
+    }
+  }
+}//.form_styles
+
+#form_container{
+  span{
+    display: block;
+  }
+  .child_form_area,.grandson_form_area{
+    visibility: hidden;
+    height: 0;
+    transition: all .5s ease;
+  }
+  input[type="checkbox"]:checked+label{
+    margin-bottom: 0;
+    transition: all .5s ease;
+    +div{
+      visibility: visible;
+      height: auto;
+      padding: 18px 8px;
+    }
+  }
+  input#form_checkbox1+label+div.child_form_area > input[type="checkbox"]+label+div.grandson_form_area{
+    visibility: hidden;
+    height: 0;
+  }
+  input#form_checkbox1+label+div.child_form_area > input[type="checkbox"]:checked+label+div.grandson_form_area{
+    visibility: hidden;
+    height: 0;
+  }
+  input#form_checkbox1:checked+label+div.child_form_area > input[type="checkbox"]:checked+label+div.grandson_form_area{
+    visibility: visible;
+    height: auto;
+  }
+
+
+
+}//form_container

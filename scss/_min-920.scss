@@ -1,0 +1,36 @@
+//PC用
+//サイドナビゲーション
+.site-nav{
+  >ul{
+    >li{
+      ::selection{
+        background: $maincolor;
+        color: #fff;
+      }
+      i.fa-caret-down{
+        display: none;
+      }
+      a:hover{
+        background: transparent;
+        text-decoration: none;
+      }
+      &:hover >a{
+        background: transparent;
+        border-color: $maincolor;
+        transition: all 0.2s ease;
+      }
+    }
+  }
+}
+
+
+///フッターナビゲーション
+.alchem_menu_widget .menu{
+  li{
+    float: left;
+    a{
+      border: none;
+      background: transparent;
+    }
+  }
+}

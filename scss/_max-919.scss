@@ -1,0 +1,120 @@
+//スマフォ
+
+  p,h4{
+    text-align: justify;
+    text-justify:distribute-all-lines;
+  }
+  .site-nav{
+    >ul{
+      >li{
+        i.fa-caret-down{
+          width: 50px;
+          border: 4px solid #888;
+          border-radius: 50%;
+          transform: scale(0.5);
+          line-height: 40px;
+
+          &:focus{
+            background: #888;
+          }
+          &:before{
+            color: #888;
+            font-size: 24px;
+          }
+          &:active{
+            background: #888;
+          }
+        }
+      }
+    }
+  }//.site-nav
+//toppage
+  section .section:before{
+    min-height: 100vh;
+    display: table;
+    width: 100%;
+    animation: none;
+
+
+  }
+
+a.button {
+    width: 100%;
+    text-align: center;
+
+        span{
+            display: block;
+            }
+}
+
+  section.page-title-bar{
+    background-position: center;
+  }
+  div.form_styles{
+    input,select,textarea{
+      width: 100%;
+    }
+    label{
+      width: 100%;
+      span{
+        width: 100%;
+      }
+    }
+  }//form_styles
+
+//投稿ページ
+.post-wrap {
+    dt{
+    width: 100%;
+    font-size: .95em;
+    padding-top:  .5em;
+    box-sizing: border-box;
+    border: none;        
+    }
+    dd{
+        margin-bottom: 1em;
+    border-bottom: 1px solid #fff;
+    padding: .5em;
+    box-sizing: border-box;
+    text-align: right;
+    font-size: 1.2em;
+        width: 100%;
+    }
+    .maker_list{
+
+    dt,dd{
+        float: left;
+        box-sizing: border-box;
+        border: none;
+        margin-bottom: 15px;
+        width: auto;
+        clear: none;
+        background-color: #e5e5e5;
+        padding: 10px;
+        width: 50%;
+        margin: 0px;
+        font-size: 1em;
+    }
+    dt{
+        text-align: right;
+        padding-right: 0;
+    }
+    dd{
+        text-align: left;
+        padding-left: .5em;
+    }
+    dt+dd{
+        margin: 0px;
+    }
+    }
+}
+
+
+
+
+//フッター
+
+.alchem_menu_widget li a{
+        background-color: transparent;
+    border-right: none;
+}
