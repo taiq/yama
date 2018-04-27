@@ -105,10 +105,12 @@ a:active,a:hover,a:focus{
       background-color: #fff;
     }
   }
-#alchem-home-sections .alchem-home-section-10, .alchem-home-section-10 p, .alchem-home-section-10 span, .alchem-home-section-10 h1, .alchem-home-section-10 h2, .alchem-home-section-10 div, .alchem-home-section-10 li, .alchem-home-section-10 i{
+#alchem-home-sections .alchem-home-section-10, .alchem-home-section-10 p, .alchem-home-section-10 span, .alchem-home-section-10 h1, .alchem-home-section-10 div, .alchem-home-section-10 li, .alchem-home-section-10 i{
     color: $maincolor;
 }
-    
+.img-box:hover .img-overlay .img-overlay-content i{
+    visibility: hidden !important;
+}
 p,div{
     line-height: 1.9;
     text-align: justify;
@@ -130,7 +132,7 @@ table{
 }
 
 
-a.button {
+a.button , .alchem_section_3_button_text a{
     border: 2px solid #363581;
     padding: 1em;
     margin: 1em 0;
@@ -175,25 +177,23 @@ z-index: 0;
     width: 100%;
     height: 100%;
     background-position:center center;
-    animation-name: bgzume;
-    animation-duration: 16s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
+//    animation-name: bgzume;
+//    animation-duration: 8s;
+//    animation-timing-function: ease-in-out;
+//    animation-fill-mode: forwards;
+//    animation-iteration-count: infinite;
 
   }
 
-  @keyframes bgzume {
-    0%{
-      background-size: 120%;
-    }
-    50%{
-        background-size: 100%;  
-      }
-    100%{
-      background-size: 100%;
-    }
-  }
+//  @keyframes bgzume {
+//    0%{
+//      background-size: 120%;
+//    }
+//
+//    100%{
+//      background-size: 100%;
+//    }
+//  }
 
 alchem-home-sections .section-content{
   h1,p,a{
@@ -258,7 +258,7 @@ section.page-title-bar:before{
     padding: 1em;
     font-size: 16px;
     border-bottom: 1px solid #fff;
-        margin: 0;
+     margin: 0;
     }
     dt{
     font-weight: bold;
@@ -273,6 +273,9 @@ section.page-title-bar:before{
     h4{
         font-weight: bold;
         font-size: 18px;
+    }
+    dd:last-child{
+        margin-bottom: 0;
     }
 }
 

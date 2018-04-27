@@ -1,7 +1,11 @@
 input#form_checkbox1,input#form_checkbox2,input#form_checkbox3,input#form_checkbox1_child_off,input#form_checkbox1_child_on,{
   display: none;
 }
-
+.form_subtext{
+    font-weight: normal;
+    color: #ccc;
+    line-height: 1em;
+}
 .form_select_check{
 
   box-sizing: border-box;
@@ -78,8 +82,41 @@ label{
   &+select{
     padding-bottom: 7px;
   }
+    input:checked,input:focus{
+        +span{
+            color: #333;
+            font-weight: bold;
+        }
+    }
 }
 
+    //    ラジオボタン
+.form-radio{
+    span.wpcf7-list-item{
+        margin: 0;
+    }
+    label{
+        margin: 1em 1em 1em 0;
+        >input{
+            display: none;
+            &:checked+span{
+                background: $maincolor;
+                color: #fff;
+            }
+        }
+        >span{
+            background: #e5e5e5;
+            padding: 1em;
+            color: #666;
+            cursor: pointer;
+            @include transition;
+            &:hover{
+                background: lighten($maincolor,50%);
+            }
+        }
+        
+    }
+}
 span+br,label+br{
   display: none;
 }
@@ -242,3 +279,9 @@ textarea{
 
 
 }//form_container
+
+.key_form{
+    margin-top: 18px;
+    border: 2px solid #aaa;
+    padding: 18px 8px;
+}//key_form
