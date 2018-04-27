@@ -1,0 +1,11 @@
+Redirect permanent /suitcase.html http://yamazawa-kobo.com/
+Redirect permanent /link.html http://yamazawa-kobo.com/
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.yamazawa-kobo\.com
+RewriteRule (.*) http://yamazawa-kobo.com/$1 [R=301,L]
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ http://yamazawa-kobo.com/$1 [R=301,L]
+
+
+
