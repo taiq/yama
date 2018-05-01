@@ -28,8 +28,12 @@ background-color: $maincolor !important;
 .btn-normal, a.btn-normal, .magee-btn-normal, a.magee-btn-normal, .comment-reply-link, .form-submit .submit{
   background-color: $maincolor;
 }
-a:active,a:hover,a:focus{
+a:active,a:hover,a:focus,a .entry-title:hover,.site-name:hover{
   color: $maincolor;
+}
+
+.btn-normal:hover, .magee-btn-normal:hover, .comment-reply-link:hover, .form-submit .submit:hover, .btn-normal:active, .magee-btn-normal:active, .comment-reply-link:active, .form-submit .submit:active, .btn-normal:focus, .magee-btn-normal:focus, .comment-reply-link:focus, .form-submit .submit:focus{
+     background-color: darken($maincolor, 50%);
 }
 // #alchem-home-sections .alchem-home-style-0.alchem-home-section-0 .magee-heading{
 //   color:$maincolor;
@@ -257,34 +261,36 @@ section.page-title-bar:before{
     color: #fff;
     padding: .2em .2em;
 }  
-    dl{
+    dl.dl_table{
         margin-top: 20px;
     margin-bottom: 20px;
     background: #e5e5e5;
     overflow: hidden;
     box-sizing: border-box;  
-    }
-    dd,dt{
-    float: left;
-    padding: 1em;
-    font-size: 16px;
-    border-bottom: 1px solid #fff;
-     margin: 0;
-    }
-    dt{
-    font-weight: bold;
-    width: 20%;
-    clear: left;
-    border-right: 1px solid #fff;        
-    }
-    dd{
+        dd,dt{
+        float: left;
+        padding: 1em;
+        font-size: 16px;
+        border-bottom: 1px solid #fff;
+        margin: 0;
+        }
+        dt{
+        font-weight: bold;
+        width: 20%;
+        clear: left;
+        border-right: 1px solid #fff;        
+        }
+        dd{
         width: 80%;
         margin-bottom: 0;
+        }
+
+        dd:last-child{
+        margin-bottom: 0;
+        }    
+        
     }
 
-    dd:last-child{
-        margin-bottom: 0;
-    }
     table{
         dl{
             background: none;
@@ -301,7 +307,7 @@ section.page-title-bar:before{
             float: none;
         }
     }
-    .map_captions,.entry-content{
+    .map_captions{
             background: none;
             margin: 0;
         dt{
@@ -347,8 +353,8 @@ section.page-title-bar:before{
 
 //お客様の声
 #voice_wrap{
- .panel-heading　h3{
-    border: none;
+ h3.panel-title{
+    border-bottom: none;
 }  
     .panel-body{
         line-height: 2.4em;
@@ -385,6 +391,49 @@ section.page-title-bar:before{
   }
 }
 
+
+h3.process_header{
+    position: relative;
+    margin-bottom: 1.5em;
+    &:after{
+    content: "";
+    left: 50%;
+    display: block;
+    position: absolute;
+    margin-top: .5em;
+    border: .6em solid transparent;
+    border-top: .8em solid $maincolor;
+    transform: scaleY(-0.3em);
+    }
+    
+    &:last-of-type:after{
+        content: none;
+    }
+    
+}
+p+h3.process_header{
+    margin-top: 4em;
+}
+
+//修理事例
+body.category-repair{
+    .blog-list-wrap{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        >div{
+            width: 50%;
+        }
+        .entry-summary{
+                font-size: .9em;
+    padding-right: 4em;
+        }
+
+        
+    }
+} 
+
+
 //修理の問い合わせ
 
 .application-panel img{
@@ -414,11 +463,11 @@ section.page-title-bar:before{
     }
     dt{
         text-align: right;
-        padding-right: 0;
+        padding: 1em 0 1em 1em ;
     }
     dd{
         text-align: left;
-        padding-left: .5em;
+        padding-left: 1em 1em 1em .5em;
     }
     dt+dd{
         margin-right: 10px;

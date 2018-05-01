@@ -128,6 +128,21 @@ img.size-large{
     }
 }
 
+//修理事例
+
+body.category-repair{
+    .blog-list-wrap{
+
+        >div{
+            width: auto;
+        }
+        .entry-summary{
+    padding-right: 0;
+        }
+
+        
+    }
+} 
 
 
 
