@@ -129,6 +129,9 @@ table{
         vertical-align: middle;
         padding: 1em;
     }
+    th{
+        min-width: 11%;
+    }
 }
 
 
@@ -156,6 +159,9 @@ a.button , .alchem_section_3_button_text a{
     }
 }
 
+img.size-large{
+    width: 50%;
+}
 
 //トップページ
 
@@ -241,6 +247,11 @@ section.page-title-bar:before{
     border-bottom: 3px solid #363581;
     padding: 0.5em 0;
 }
+    h4{
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 20px;
+    }
   strong{
     background-color: #363581;
     color: #fff;
@@ -270,15 +281,81 @@ section.page-title-bar:before{
         width: 80%;
         margin-bottom: 0;
     }
-    h4{
-        font-weight: bold;
-        font-size: 18px;
-    }
+
     dd:last-child{
         margin-bottom: 0;
     }
+    table{
+        dl{
+            background: none;
+            margin: 0;
+        }
+        dt{
+            background: inherit;
+            float: none;
+            padding: 0;
+        }
+        dd{
+            text-align: left;
+            background: inherit;
+            float: none;
+        }
+    }
+    .map_captions,.entry-content{
+            background: none;
+            margin: 0;
+        dt{
+            background: inherit;
+            float: none;
+            padding: 0;
+            width: auto;
+            width: auto;
+             border: none;
+        }
+        dd{
+            text-align: left;
+            background: inherit;
+            float: none;
+            padding-left: .5em;
+            width: auto;
+            padding: .5em 0 1em 0;
+            margin-bottom: 1em;
+            border-bottom: 1px solid #e5e5e5;
+            
+            ul{
+                list-style: none;
+                padding: 0;
+            }
+        }
+    }
+    
+    .price-list{
+            background: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: stretch;
+        dt{
+            p{
+                text-align: center;
+                font-size: .9em;
+            }   
+        }
+
+    }
 }
 
+//お客様の声
+#voice_wrap{
+ .panel-heading　h3{
+    border: none;
+}  
+    .panel-body{
+        line-height: 2.4em;
+    font-family: serif;
+    color: #000;
+    }
+}
 
 
 
