@@ -66,25 +66,37 @@ img.size-large{
     width: 100%;
 }
 
+table{
+    th,td{
+        padding: .5em;
+    }
+}
+
 //投稿ページ
 .post-wrap {
-    dt{
-    width: 100%;
-    font-size: .95em;
-    padding-top:  .5em;
-    box-sizing: border-box;
-    border: none;        
+    dl.dl_table{
+         dt{
+            width: 100%;
+            font-size: .95em;
+            padding:.5em 0 0 .5em;
+            box-sizing: border-box;
+            border: none;
+             float: none;
+        }
+        dd{
+            margin-bottom: .5em;
+            border-bottom: 1px solid #fff;
+            padding: 0 0 .5em .5em;
+            box-sizing: border-box;
+            text-align: left;
+            width: 100%;
+            font-size: 1em;
+        }       
     }
-    dd{
-        margin-bottom: 1em;
-    border-bottom: 1px solid #fff;
-    padding: .5em;
-    box-sizing: border-box;
-    text-align: right;
-    font-size: 1.2em;
-        width: 100%;
-    }
-    
+
+    h2{
+        font-size: 22px;
+    } 
     table{
         dl{
             background: none;
@@ -144,12 +156,27 @@ body.category-repair{
     }
 } 
 
+//入力フォーム
+span[role="alert"]{
+    position: relative;
+    background: transparent;
+    color: #D65858;
+    border-radius: 4px;
+    padding: .2em;
+    box-shadow: none;
+    transform: translateY(0);
+}
 
 
 //フッター
 
-.alchem_menu_widget li a{
+.alchem_menu_widget{
+    li{
+        border-color: #656565;
+        a{
         background-color: transparent;
-    border-right: none;
+        border-right: none;
+        } 
+    } 
 }
 

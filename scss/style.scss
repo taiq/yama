@@ -13,6 +13,10 @@ $maincolor:#363581;
 %bg-maincolor{
   background-color: $maincolor;
 }
+
+%hover-color{
+    color: $maincolor;
+}
 @mixin bg-maincolor {
   background-color: $maincolor;
 }
@@ -24,12 +28,19 @@ $maincolor:#363581;
 //上書き部分
 ::selection,body ::selection,::-moz-selection,body ::-moz-selection,*::selection,*::-moz-selection,span::selection,span::-moz-selection,a::selection,a::-moz-selection,p::selection,p::-moz-selection,h1::selection,h1::-moz-selection,h2::selection,h2::-moz-selection{
 background-color: $maincolor !important;
+    background: $maincolor !important;
 }
 .btn-normal, a.btn-normal, .magee-btn-normal, a.magee-btn-normal, .comment-reply-link, .form-submit .submit{
   background-color: $maincolor;
 }
-a:active,a:hover,a:focus,a .entry-title:hover,.site-name:hover{
-  color: $maincolor;
+a:active,a:hover,a:focus,a .entry-title:hover,.site-name:hover,.site-nav > ul > li.current > a,.entry-meta a:hover{
+  @extend %hover-color;
+}
+
+.post-pagination li a:hover{
+    @extend %hover-color;
+    border-color: $maincolor;
+    
 }
 
 .btn-normal:hover, .magee-btn-normal:hover, .comment-reply-link:hover, .form-submit .submit:hover, .btn-normal:active, .magee-btn-normal:active, .comment-reply-link:active, .form-submit .submit:active, .btn-normal:focus, .magee-btn-normal:focus, .comment-reply-link:focus, .form-submit .submit:focus{
@@ -129,6 +140,8 @@ p,div{
     }
 }
 table{
+    border-collapse: collapse;
+    border-spacing: 0;
     td,th{
         vertical-align: middle;
         padding: 1em;
@@ -307,7 +320,7 @@ section.page-title-bar:before{
             float: none;
         }
     }
-    .map_captions{
+    @at-root .map_captions{
             background: none;
             margin: 0;
         dt{
@@ -335,7 +348,7 @@ section.page-title-bar:before{
         }
     }
     
-    .price-list{
+    @at-root .price-list{
             background: none;
             display: flex;
             flex-wrap: wrap;
@@ -377,21 +390,53 @@ section.page-title-bar:before{
   }
 }
 
+@mixin gray-hover($gray:#999){
+    color: $gray;
+    border-color: $gray;
+    text-decoration: none;
+}
+
 .entry-footer{
   @at-root .entry-tags{
-    padding: .2em .5em;
-    border: 1px solid #ccc;
-    color: #bbb;
-    border-radius: .5em;
-    text-decoration: none;
-    &:hover{
-      background-color: #ccc;
-      color: #999;
-    }
+      li{
+        padding: .2em .5em;
+        border: 1px solid #ccc;
+        border-radius: .5em;
+        text-decoration: none;
+        box-sizing: border-box;
+          a{
+              color: #ccc;
+          }
+        &:hover{
+          @include gray-hover;
+        }
+          &+li{
+              margin-left: 2em;
+          }
+      }
+
   }
 }
 
+a.tag-cloud-link{
+    font-size: inherit;
+    display: inline-block;
+    padding: .2em .5em;
+    border: 1px solid #ccc;
+    border-radius: .5em;
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 0 1em 1em .5em;
+    color: #ccc;
 
+        &:hover{
+     @include gray-hover;
+        }
+}
+
+h2.widget-title{
+    font-family: sans-serif;
+}
 h3.process_header{
     position: relative;
     margin-bottom: 1.5em;
@@ -433,7 +478,18 @@ body.category-repair{
     }
 } 
 
-
+.twentytwenty-wrapper{
+    margin: 20px 0;
+}
+.repair-price{
+    margin: 20px 0 20px;
+    background: #e5e5e5;
+    padding: 2em;
+    span{
+        display: block;
+        color: #666;
+    }
+}
 //修理の問い合わせ
 
 .application-panel img{
@@ -451,6 +507,7 @@ body.category-repair{
 
 .maker_list{
     background-color: transparent !important;
+    overflow: hidden;
 
     dt,dd{
         float: left;
@@ -467,15 +524,27 @@ body.category-repair{
     }
     dd{
         text-align: left;
-        padding-left: 1em 1em 1em .5em;
+        padding: 1em 1em 1em .5em;
     }
     dt+dd{
         margin-right: 10px;
     }
 }
 
+
+//お知らせ
+
+.news_table{
+    margin-top: 24px;
+    h3{
+        border: none;
+    font-weight: normal;
+    }
+}
+
 //問い合わせページ
 @import "form";
+
 
 //フッター
 

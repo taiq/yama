@@ -6,6 +6,21 @@ input#form_checkbox1,input#form_checkbox2,input#form_checkbox3,input#form_checkb
     color: #ccc;
     line-height: 1em;
 }
+
+span[role="alert"]{
+    position: absolute;
+    background: #D65858;
+    top: 0;
+    right: 0;
+    color: #fff;
+    border-radius: 4px;
+    padding: .2em;
+    box-shadow: 1px 5px 3px rgba(0,0,0,.1);
+    transform: translateY(-2em);
+    @include transition;
+}
+
+
 .form_select_check{
 
   box-sizing: border-box;
@@ -82,10 +97,13 @@ label{
   &+select{
     padding-bottom: 7px;
   }
-    input:checked,input:focus{
+  input:checked,input:focus{
         +span{
             color: #333;
             font-weight: bold;
+        }
+        +span[role="alert"]{
+            opacity: 0;
         }
     }
 }
@@ -102,11 +120,13 @@ label{
             &:checked+span{
                 background: $maincolor;
                 color: #fff;
+                
             }
         }
         >span{
             background: #e5e5e5;
             padding: 1em;
+            line-height: 2em;
             color: #666;
             cursor: pointer;
             @include transition;
@@ -279,6 +299,8 @@ textarea{
 
 
 }//form_container
+
+
 
 .key_form{
     margin-top: 18px;
