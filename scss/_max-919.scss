@@ -29,6 +29,18 @@
     }
   }//.site-nav
 //toppage
+
+.name-box{
+    margin: 0;
+}
+.site-name{
+    font-size: 1em;
+}
+.alchem-home-style-0.alchem-home-section-0 .magee-heading{
+    font-size: 4em;
+    margin-bottom: 0;
+}
+
   section .section:before{
     min-height: 100vh;
     display: table;
@@ -37,6 +49,10 @@
 
 
   }
+
+.site-nav li ul li:hover > a{
+    color: $maincolor;
+}
 
 a.button {
     width: 100%;

@@ -26,10 +26,7 @@ $maincolor:#363581;
 }
 
 //上書き部分
-::selection,body ::selection,::-moz-selection,body ::-moz-selection,*::selection,*::-moz-selection,span::selection,span::-moz-selection,a::selection,a::-moz-selection,p::selection,p::-moz-selection,h1::selection,h1::-moz-selection,h2::selection,h2::-moz-selection{
-background-color: $maincolor !important;
-    background: $maincolor !important;
-}
+
 .btn-normal, a.btn-normal, .magee-btn-normal, a.magee-btn-normal, .comment-reply-link, .form-submit .submit{
   background-color: $maincolor;
 }
@@ -56,15 +53,15 @@ a:active,a:hover,a:focus,a .entry-title:hover,.site-name:hover,.site-nav > ul > 
 //   color:$maincolor;
 // }
 .entry-footer{
-  a.btn-normal{
-    color: $maincolor;
-    border: 2px solid $maincolor;
-    background: transparent;
-    &:hover{
-      background: $maincolor;
-      color: #fff;
-    }
-  }
+      a.btn-normal{
+        color: $maincolor;
+        border: 2px solid $maincolor;
+        background: transparent;
+        &:hover{
+          background: $maincolor;
+          color: #fff;
+        }
+      }
 }
 .site-nav{
   >ul{
@@ -73,9 +70,9 @@ a:active,a:hover,a:focus,a .entry-title:hover,.site-name:hover,.site-nav > ul > 
         +a{
           pointer-events: none;
           color: #333;
-          &:hover{
-        background:none;
-          }
+              &:hover{
+            background:none;
+              }
           }
         }
       >li.current >a{
@@ -99,27 +96,24 @@ a:active,a:hover,a:focus,a .entry-title:hover,.site-name:hover,.site-nav > ul > 
     }
   }
 
-  .btn-normal{
-    @extend %bg-maincolor;
-    color: #fff;
-  }
-  a.btn-normal .magee-btn-normal{
-    @extend .btn-normal;
-  }
-  a.magee-btn-normal{
-      @extend .btn-normal;
-  }
-  .comment-reply-link{
-      @extend .btn-normal;
-  }
-  .form-submit .submit{
-      @extend .btn-normal;
-}
-  .widget-title{
-    &:after{
-      background-color: #fff;
-    }
-  }
+          .btn-normal{
+            @extend %bg-maincolor;
+            color: #fff;
+          }
+          a.btn-normal .magee-btn-normal{
+            @extend .btn-normal;
+          }
+          a.magee-btn-normal{
+              @extend .btn-normal;
+          }
+          .comment-reply-link{
+              @extend .btn-normal;
+          }
+      .form-submit .submit{
+          @extend .btn-normal;
+        }
+ 
+  
 #alchem-home-sections .alchem-home-section-10, .alchem-home-section-10 p, .alchem-home-section-10 span, .alchem-home-section-10 h1, .alchem-home-section-10 div, .alchem-home-section-10 li, .alchem-home-section-10 i{
     color: $maincolor;
 }
@@ -181,7 +175,9 @@ img.size-large{
 }
 
 //トップページ
-
+.name-box{
+    margin: 20px 0;
+}
   section .section{
 z-index: 0;
     // background-position:center center;
@@ -320,6 +316,17 @@ section.page-title-bar:before{
             float: none;
         }
     }
+        .widget-box li{
+        padding: 0;
+        }
+
+        .widget-box li:first-child{
+            padding-top: 10px;
+        }
+
+        .widget-box li:last-child{
+            padding-bottom: 10px;
+        }
     @at-root .map_captions{
             background: none;
             margin: 0;
@@ -402,10 +409,10 @@ section.page-title-bar:before{
         padding: .2em .5em;
         border: 1px solid #ccc;
         border-radius: .5em;
-        text-decoration: none;
         box-sizing: border-box;
           a{
               color: #ccc;
+              text-decoration: none;
           }
         &:hover{
           @include gray-hover;
@@ -436,6 +443,15 @@ a.tag-cloud-link{
 
 h2.widget-title{
     font-family: sans-serif;
+    &:after{
+        background-color: $maincolor;
+    }
+}
+
+.footer-widget-area h2.widget-title{
+    &:after{
+        background-color: #fff;
+    }
 }
 h3.process_header{
     position: relative;
@@ -459,6 +475,7 @@ h3.process_header{
 p+h3.process_header{
     margin-top: 4em;
 }
+
 
 //修理事例
 body.category-repair{
@@ -540,6 +557,11 @@ body.category-repair{
         border: none;
     font-weight: normal;
     }
+}
+
+//seach
+article+article{
+    margin-top: 30px;
 }
 
 //問い合わせページ
