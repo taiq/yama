@@ -145,6 +145,13 @@ table{
     }
 }
 
+.page-title-bar{
+   .page-title,.breadcrumb-trail{
+       position: relative;
+       z-index: 2;
+    
+} 
+}//ページタイトルの表示
 
 a.button , .alchem_section_3_button_text a{
     border: 2px solid #363581;
